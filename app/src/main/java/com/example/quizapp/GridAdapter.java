@@ -40,7 +40,7 @@ public class GridAdapter extends BaseAdapter {
         else{
             view = convertView;
         }
-        ((TextView)view.findViewById(R.id.textView)).setText(String.valueOf(position+1));
+        ((TextView)view.findViewById(R.id.question)).setText(String.valueOf(position+1));
         return view;
     }
 }

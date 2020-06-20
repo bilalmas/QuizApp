@@ -8,7 +8,7 @@
     android:backgroundTint="#F3F3F3"
     android:layout_height="90dp">
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="1"
