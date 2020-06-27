@@ -10,8 +10,9 @@ import android.widget.TextView;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    private Button startBtn;
+    //private Button startBtn;
     private TextView signintextview;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +22,10 @@ public class SignUpActivity extends AppCompatActivity {
         //startBtn = findViewById(R.id.start_btn);
         signintextview = findViewById(R.id.textViewSignin);
 
-
     }
 
     public void Signin(View view){
-        Intent signin = new Intent(this,SignInActivity.class);
+        Intent signin = new Intent(this, SignInActivity.class);
         startActivity(signin);
     }
 }

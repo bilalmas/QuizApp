@@ -25,7 +25,7 @@
             android:layout_gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_weight="1"
+            android:layout_weight="10"
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@mipmap/ic_launcher" />
 
@@ -39,7 +39,7 @@
             android:textColor="@color/colorText"
             android:textSize="36sp"
             android:textStyle="bold"
-            android:layout_weight="1"
+            android:layout_weight="0"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/logo" />
@@ -60,12 +60,14 @@
             android:textStyle="bold"
             android:inputType="textPersonName"
             android:paddingStart="15dp"
+            android:paddingEnd="15dp"
             android:textColor="@color/colorText"
             android:textColorHint="@drawable/selector"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_weight="1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewSignUp" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewSignUp"
+            android:autofillHints="Name" />
 
         <EditText
             android:id="@+id/editTextEmailAddress"
@@ -83,11 +85,13 @@
             android:textStyle="bold"
             android:inputType="textEmailAddress"
             android:paddingStart="15dp"
+            android:paddingEnd="15dp"
             android:textColor="@color/colorText"
             android:textColorHint="@drawable/selector"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextName" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextName"
+            android:autofillHints="Email" />
 
         <EditText
             android:id="@+id/editTextPassword"
@@ -104,12 +108,14 @@
             android:hint="Password"
             android:inputType="textPassword"
             android:paddingStart="15dp"
+            android:paddingEnd="15dp"
             android:textStyle="bold"
             android:textColor="@color/colorText"
             android:textColorHint="@drawable/selector"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextEmailAddress" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextEmailAddress"
+            android:autofillHints="Password" />
 
         <EditText
             android:id="@+id/editTextConfirmPassword"
@@ -125,20 +131,22 @@
             android:hint="Confirm Password"
             android:inputType="textPassword"
             android:paddingStart="15dp"
+            android:paddingEnd="15dp"
             android:textStyle="bold"
             android:textColor="@color/colorText"
             android:textColorHint="@drawable/selector"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_weight="1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
+            android:autofillHints="Confirm Password" />
 
         <Button
             android:id="@+id/buttonCreateAccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="40dp"
             android:layout_marginRight="50dp"
             android:background="@drawable/rounded_corners_blue"
             android:backgroundTint="@color/colorButtons"
@@ -155,9 +163,9 @@
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:orientation="horizontal"
-             android:layout_weight="10"
+             android:layout_weight="1"
              android:layout_marginBottom="2dp"
-             android:layout_marginTop="10dp"
+             android:layout_marginTop="20dp"
              android:backgroundTint="@color/colorButtons"
              android:background="@drawable/semi_rounded_borders">
         <TextView
@@ -189,7 +197,7 @@
                  android:layout_weight="2"
                  android:onClick="Signin"
                  tools:ignore="OnClick,RtlCompat" />
-    </LinearLayout>
+        </LinearLayout>
 
     </LinearLayout>
 

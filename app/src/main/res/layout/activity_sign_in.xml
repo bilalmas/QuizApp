@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUpActivity">
+    tools:context=".SignInActivity">
 
 
     <LinearLayout
@@ -25,7 +25,7 @@
             android:layout_gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_weight="1"
+            android:layout_weight="7"
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@mipmap/ic_launcher" />
 
@@ -61,11 +61,13 @@
             android:textStyle="bold"
             android:inputType="textEmailAddress"
             android:paddingStart="15dp"
+            android:paddingEnd="15dp"
             android:textColor="@color/colorText"
             android:textColorHint="@drawable/selector"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextName" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextName"
+            android:autofillHints="Email" />
 
         <EditText
             android:id="@+id/editTextPassword"
@@ -82,17 +84,20 @@
             android:hint="Password"
             android:inputType="textPassword"
             android:paddingStart="15dp"
+            android:paddingEnd="15dp"
             android:textStyle="bold"
             android:textColor="@color/colorText"
             android:textColorHint="@drawable/selector"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextEmailAddress" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextEmailAddress"
+            android:autofillHints="Password" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_weight="5">
+            android:layout_weight="1">
            <CheckBox
                android:layout_width="match_parent"
                android:layout_height="match_parent"
@@ -114,21 +119,14 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 tools:ignore="RtlCompat" />
-
-
-
-
-
         </LinearLayout>
-
-
 
         <Button
             android:id="@+id/buttonCreateAccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="40dp"
             android:layout_marginRight="50dp"
             android:background="@drawable/rounded_corners_blue"
             android:backgroundTint="@color/colorButtons"
@@ -145,9 +143,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_weight="3"
+            android:layout_weight="1"
             android:layout_marginBottom="2dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:backgroundTint="@color/colorButtons"
             android:background="@drawable/semi_rounded_borders">
             <TextView
@@ -165,7 +163,7 @@
                 android:layout_weight="1"
                 tools:ignore="RtlCompat" />
             <TextView
-                android:id="@+id/textViewSignin"
+                android:id="@+id/textViewSignUp2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTintMode="add"
@@ -177,6 +175,9 @@
                 android:textColor="@color/colorlightblue"
                 android:textSize="18sp"
                 android:layout_weight="2"
+                android:onClick="Signup"
+                android:clickable="true"
+                android:focusable="true"
                 tools:ignore="RtlCompat" />
         </LinearLayout>
 
