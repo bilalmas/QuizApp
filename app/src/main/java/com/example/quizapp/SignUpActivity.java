@@ -22,8 +22,6 @@ public class SignUpActivity extends AppCompatActivity {
     Button SignUp;
     FirebaseAuth mFirebaseAuth;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,11 +47,15 @@ public class SignUpActivity extends AppCompatActivity {
                     full_name.requestFocus();
                 }
                 else if(email.isEmpty()){
-                    email_address.setError("Please enter Email Address");
+                    email_address.setError("Please enter your Email Address");
                     email_address.requestFocus();
                 }
                 else if(pwd.isEmpty()){
                     password.setError("Please enter your Password");
+                    password.requestFocus();
+                }
+                else if(pwd.length() < 8){
+                    password.setError("Please enter a stronger password");
                     password.requestFocus();
                 }
                 else  if(!confirm_pwd.equals(pwd)){

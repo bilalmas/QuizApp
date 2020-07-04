@@ -21,6 +21,7 @@ public class SignInActivity extends AppCompatActivity {
 
     EditText full_name, email_address, password, confirm_password;
     Button SignIn;
+    TextView ForgotPassword;
     FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
 
@@ -34,6 +35,7 @@ public class SignInActivity extends AppCompatActivity {
         email_address = findViewById(R.id.editTextEmailAddress);
         password = findViewById(R.id.editTextPassword);
         SignIn = findViewById(R.id.buttonCreateAccount);
+        ForgotPassword = findViewById(R.id.textForgotPassword);
 
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -57,7 +59,7 @@ public class SignInActivity extends AppCompatActivity {
                 String pwd = password.getText().toString();
 
                 if(email.isEmpty()){
-                    email_address.setError("Please enter Email Address");
+                    email_address.setError("Please enter your Email Address");
                     email_address.requestFocus();
                 }
                 else if(pwd.isEmpty()){
@@ -69,7 +71,7 @@ public class SignInActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(!task.isSuccessful()){
-                                Toast.makeText(SignInActivity.this,"SignIn Unsuccessful, Please Try Again",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignInActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
                             }
                             else {
                                 startActivity(new Intent(SignInActivity.this,CategoriesActivity.class));
@@ -83,6 +85,33 @@ public class SignInActivity extends AppCompatActivity {
                 }
             }
         });
+
+        ForgotPassword.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                final String email = email_address.getText().toString();
+
+                if(email.isEmpty()){
+                    email_address.setError("Please enter your Email Address to reset your password");
+                    email_address.requestFocus();
+                }
+
+                else  if(!email.isEmpty()){
+                    mFirebaseAuth.sendPasswordResetEmail(email)
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        Toast.makeText(SignInActivity.this, "An email has been sent to " + email, Toast.LENGTH_SHORT).show();
+                                        finish();
+                                    } else {
+                                        Toast.makeText(SignInActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                                    }
+                                }
+                            });
+                }
+            }
+        });
     }
 
 
@@ -90,4 +119,5 @@ public class SignInActivity extends AppCompatActivity {
         Intent signup = new Intent(this, SignUpActivity.class);
         startActivity(signup);
     }
+
 }

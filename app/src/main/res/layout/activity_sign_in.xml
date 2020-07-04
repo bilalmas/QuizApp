@@ -108,6 +108,7 @@
                android:textColor="@color/colorText"
                android:buttonTint="@color/colorText"/>
             <TextView
+                android:id="@+id/textForgotPassword"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
