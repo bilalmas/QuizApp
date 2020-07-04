@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "651574521621",
+    "firebase_url": "https://preplytics-8a2d4.firebaseio.com",
+    "project_id": "preplytics-8a2d4",
+    "storage_bucket": "preplytics-8a2d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:651574521621:android:a94c4c3bf8fe6bacd5031c",
+        "android_client_info": {
+          "package_name": "com.example.quizapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "651574521621-pogmog711b5cebk0f5hnb11amj6icog0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbhFX_2j6xDahHc4g0thmVr4uXcYCPcQQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "651574521621-pogmog711b5cebk0f5hnb11amj6icog0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
